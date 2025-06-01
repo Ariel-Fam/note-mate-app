@@ -1,0 +1,8 @@
+flutter_icons:
+  image_path: "icon.png"
+  android: "false"
+  ios: "false"
+  macos: "true"
+  web: "false"
+  windows: "true"
+  linux: "true"
