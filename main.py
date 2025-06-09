@@ -151,6 +151,9 @@ def main(page: ft.Page):
             output_column.controls.clear()
             page.update()
 
+        cursor.execute("DELETE FROM notes")
+        conn.commit()
+
     def clear_history(e):
 
         if history_column.controls:
@@ -269,7 +272,7 @@ def main(page: ft.Page):
             ft.Row(controls=[
                 ft.ElevatedButton("Save Note", on_click=save_note, tooltip="Save Note Bellow"),
                 ft.ElevatedButton("Delete Note", on_click=delete_note, tooltip="Delete last Note"),
-                ft.ElevatedButton("Clear Note", on_click=clear_notes, tooltip="Delete all Notes"),
+                ft.ElevatedButton("Clear Notes", on_click=clear_notes, tooltip="Delete all Notes"),
                 ft.ElevatedButton("Notes History", icon=ft.Icons.HISTORY, on_click=lambda _: page.go("/history",),
                                   bgcolor="orange", color="black", icon_color="black", tooltip="View Notes History")
             ], alignment=ft.MainAxisAlignment.CENTER),
